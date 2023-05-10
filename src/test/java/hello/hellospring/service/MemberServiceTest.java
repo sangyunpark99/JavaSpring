@@ -7,6 +7,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
@@ -28,7 +30,7 @@ class MemberServiceTest {
     // 테스트는 과감하게 한글로 바꿔도 된다!
     // 빌드 시 실제 코드에 포함되지 않는다.
     @Test
-    void 회원가입() {
+    void 회원가입() throws SQLException {
         //given
         Member member = new Member();
         member.setName("spring");
@@ -42,7 +44,7 @@ class MemberServiceTest {
     }
 
     @Test
-    public void 중복_회원_예외(){
+    public void 중복_회원_예외() throws SQLException {
 
         //given
         Member member1 = new Member();
