@@ -2,6 +2,8 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +23,7 @@ public class MemberService {
         return member.getId();
     }
 
-    private void validateDuplicateMember(Member member) { // 중복회원 검증
+    private void validateDuplicateMember(Member member) {  // 중복회원 검증
         memberRepository.findByName(member.getName())// null 가능성이 있으면, Optional 사용
             .ifPresent(m -> {
                 throw new IllegalStateException("이미 존재하는 회원입니다");
