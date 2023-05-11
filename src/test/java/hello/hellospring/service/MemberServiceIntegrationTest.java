@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
@@ -26,7 +27,7 @@ class MemberServiceIntegrationTest {
     void 회원가입() throws SQLException {
         //given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("spring300");
 
         //when
         Long saveId = memberService.join(member);
@@ -42,7 +43,7 @@ class MemberServiceIntegrationTest {
         //given
 
         Member member2 = new Member();
-        member2.setName("spring");
+        member2.setName("spring200");
 
         //when
 
